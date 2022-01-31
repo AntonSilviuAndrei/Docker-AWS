@@ -17,10 +17,10 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t 317253585580.dkr.ecr.eu-central-1.amazonaws.com/retaillocations:latest .
-      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - docker tag 317253585580.dkr.ecr.eu-central-1.amazonaws.com/retaillocations:latest 317253585580.dkr.ecr.eu-central-1.amazonaws.com/retaillocations:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
       - docker push 317253585580.dkr.ecr.eu-central-1.amazonaws.com/retaillocations:latest
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - docker push 317253585580.dkr.ecr.eu-central-1.amazonaws.com/retaillocations:$IMAGE_TAG
